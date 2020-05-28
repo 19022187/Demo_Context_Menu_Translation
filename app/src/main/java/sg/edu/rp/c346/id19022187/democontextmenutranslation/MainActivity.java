@@ -28,18 +28,20 @@ public class MainActivity extends AppCompatActivity {
                                     ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
 
-        menu.add(0,0,0,"English");
-        menu.add(0,1,1,"Italian");
+        //menu.add(0,0,0,"English");
+        //menu.add(0,1,1,"Italian");
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+
     }
     @Override
     public boolean onContextItemSelected(MenuItem item) {
-        if(item.getItemId()==0) { //check whether the selected menu item ID is 0
+        if(item.getItemId() == R.id.menuEnglish) { //check whether the selected menu item ID is 0
             //code for action
             Toast.makeText(MainActivity.this, "English is chosen", Toast.LENGTH_SHORT).show();
 
             return true; //menu item successfully handled
         }
-        else if(item.getItemId()==1) { //check if the selected menu item ID is 1
+        else if(item.getItemId() == R.id.menuSpanish) { //check if the selected menu item ID is 1
             //code for action
             Toast.makeText(MainActivity.this, "Italian is chosen", Toast.LENGTH_SHORT).show();
 
